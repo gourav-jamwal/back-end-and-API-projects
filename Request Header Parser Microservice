@@ -20,8 +20,8 @@ app.get('/', function (req, res) {
 });
 
 app.get("/api/whoami",function(req,res){
-  console.log(req.headers['x-forward-for'])
-  const ipaddress = req.headers['x-forward-for'];
+  console.log(req.headers['x-forwarded-for'])
+  const ipaddress = req.headers['x-forwarded-for'];
   const language = req.headers['accept-language'];
   const software = req.headers['user-agent'];
   res.json({ipaddress, language, software});
